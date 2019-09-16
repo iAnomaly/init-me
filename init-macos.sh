@@ -15,7 +15,7 @@ brew install datawire/blackbird/telepresence
 brew install twpayne/taps/chezmoi
 
 # Install Homebrew formulae
-brew install awscli bash-completion coreutils fzf gawk git gnu-sed go helmfile jq kube-ps1 kubectx kubernetes-cli kubernetes-helm make mysql@5.7 node@10 python redis ripgrep sceptre sipcalc stern watch wget yq
+brew install awscli bash-completion coreutils fzf gawk git gnu-sed go helmfile highlight jq kubectx kubernetes-cli kubernetes-helm make mysql@5.7 node@10 python redis ripgrep sceptre sipcalc stern tmux tree watch wget yq
 brew link --force mysql@5.7 node@10
 
 # Install Homebrew casks
