@@ -3,12 +3,15 @@
 # Enable TouchID for PAM
 grep -q pam_tid.so /etc/pam.d/sudo || sudo sed -i '.bak' $'2i\\\nauth       sufficient     pam_tid\.so\n' /etc/pam.d/sudo
 
-# Install Xcode
-xcode-select --install
+if ! command -v brew &>/dev/null
+then
+  # Install Xcode
+  command -v xcode-select &>/dev/null || xcode-select --install
 
-# Install Homebrew
-export CI=
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  # Install Homebrew
+  export CI=
+  /usr/bin/ruby -e "$(curl --fail --location https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
 # Install Homebrew taps
 brew install datawire/blackbird/telepresence
