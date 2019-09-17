@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Enable TouchID for PAM
-grep -q pam_tid.so /etc/pam.d/sudo || sudo sed -i '.bak' $'2i\\\nauth       sufficient     pam_tid\.so\n' /etc/pam.d/sudo
+grep -q pam_tid.so /etc/pam.d/sudo || (printf 'Prompting for sudo authentication...\n' && sudo sed -Ei '.bak' $'2i\\\nauth       sufficient     pam_tid\.so\n' /etc/pam.d/sudo)
 
 if ! command -v brew &>/dev/null
 then
